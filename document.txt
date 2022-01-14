@@ -1,0 +1,81 @@
+In react, 
+the flow of data is unidirectional i.e, from parent to child.
+Other option is prop drilling.
+
+Prop Drilling is the process by which you pass data from one part of 
+the React Component tree to another by going through other parts that 
+do not need the data but only help in passing it around. ... 
+This may continue until the data gets to the ComponentNeedingProps .
+
+This was solved with contextAPI,useContext.
+
+In redux we have a centralized store by which we can fetch data from 
+any component.
+
+----------------------------------------------------------------------------
+
+
+Redux 
+is state management library for js apps.
+Its used for complex UI.
+
+Facebook came into such problem and came with Flux.
+Redux is inspired by flux but its more popular due to its simplicity.
+Another popular solution is Mobx.
+
+Redux Devtools extension can be used in Chrome for checking states and more.
+
+
+
+Pros
+=> predictable state changes -> we can see what happens in every action
+=> centralized state -> all the data our app needs is stored in a single place
+that is accessible by all parts of ui
+=> easy debugging 
+=> preserve page state
+=> undo/redo features
+=> it works with any libraries used for building UI's
+
+
+
+Cons
+=> complexity 
+=> verbosity -> we have to write some boilerPlate codes to get things done
+
+
+Redux is good for state management but we must not use it everywhere.
+It should be used where the state management very dynamic.
+
+
+---------------------------------------------------------------------------
+
+1. Action => What to do?
+2. Reducer  => How to do ? => contains state and action
+3. State/Store => object which holds state of the application
+4. Functions associated with store
+
+
+
+Action are plain js objects that have a type field.
+Action tells what to do not how to do.
+return {
+    type: "INCREMENT,
+    payload: num
+}
+export const incNumber = (num) => {
+    return {
+        type: "INCREMENT,
+        payload: num
+    }
+}
+
+
+Reducer
+are function that take current state and an action as arguments
+and return a new state result.
+
+
+Store brings together the state,actions and reducers that make 
+your app.
+We will only have a single store in redux application.
+Every redux store has a single root reducer function.
